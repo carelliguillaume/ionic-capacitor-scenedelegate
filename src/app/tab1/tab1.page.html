@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Capacitor / SceneDelegate (iOS only)
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,28 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Capacitor / SceneDelegate (iOS only)</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Capacitor Browser Fullscreen</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>The Capacitor Browser (SFSafariViewController) is not visible with presentationStyle : fullScreen</p>
+      <ion-button expand="block" fill="solid" (click)="openCapacitorBrowserFullscreen()">Open Capacitor Browser Fullscreen</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Capacitor Browser Popover</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>The capacitor Browser (SFSafariViewController) is visible with presentationStyle : popover </p>
+      <ion-button expand="block" fill="solid" (click)="openCapacitorBrowserPopover()">Open Capacitor Browser Popover</ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
