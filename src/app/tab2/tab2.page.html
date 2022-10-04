@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Capacitor AppLauncher / SceneDelegate (iOS only)
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,20 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Capacitor AppLauncher / SceneDelegate (iOS only)</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Capacitor AppLauncher</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>AppDelegate event "application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:])" is replaced by SceneDelegate event "scene(_ scene: UIScene, openURLContexts URLContexts: Set UIOpenURLContext )"</p>
+      <p>AppDelegate event "application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void)" is replaced by SceneDelegate event "scene(_ scene: UIScene, continue userActivity: NSUserActivity)"</p>
+      <p>Is it the right way to call ApplicationDelegateProxy in the SceneDelegate in my sample ?</p>
+      <ion-button expand="block" fill="solid" (click)="openCapacitorAppLauncher()">Open Capacitor AppLauncher</ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

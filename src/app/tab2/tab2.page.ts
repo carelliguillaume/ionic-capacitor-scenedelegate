@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApplauncherService } from '../common/services/applauncher.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(private appLauncherService: ApplauncherService) {}
+
+  async openCapacitorAppLauncher(): Promise<void> {
+    let url = 'ulys.alpha.auth://';
+    await this.appLauncherService.open(url);
+  }
 
 }

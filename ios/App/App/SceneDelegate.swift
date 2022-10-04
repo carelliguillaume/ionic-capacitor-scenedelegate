@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Capacitor
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>){
+        
+        if scene.session.configuration.name == "Default Configuration" {
+            let url = URLContexts.first?.url
+            print("SceneDelegate - scene - openURLContexts - url: \(String(describing: url))")
+            
+            let result = ApplicationDelegateProxy.shared.application(UIApplication.shared, open: url!)
+            
+            print("SceneDelegate - scene - openURLContexts - result: \(result)")
+        }
+    }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        
+        if scene.session.configuration.name == "Default Configuration" {
+            let result = ApplicationDelegateProxy.shared.application(UIApplication.shared, continue: userActivity, restorationHandler: { restoration in
+                print("SceneDelegate - scene - userActivity - restorationHandler: \(String(describing: restoration))")
+            })
+            
+            print("SceneDelegate - scene - userActivity - result: \(result)")
+        }
         
     }
 
