@@ -38,9 +38,6 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 # Angular environment files will be generated via build script.
-/src/environments/environment.ts
-/src/environments/environment.prod.ts
-environment-variables.sh
 *.keystore
 
 dist/
